@@ -8,6 +8,12 @@ function addSymbol(symbol) {
         string = string + symbol
         lastPressedButton = string.slice(-1)
     }
+    else if(lastPressedButton === "=") {
+        string = display.value
+        display.value += symbol
+        string = string + symbol
+        lastPressedButton = string.slice(-1)
+    }
     else {
         display.value += symbol
         string = string + symbol
