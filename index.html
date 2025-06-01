@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon/icon.png" type="image/x-icon">
+    <title>Calculator</title>
+</head>
+<body>
+    <h1>Digital Calculator</h1>
+    <div class="container">
+        <div class="calculator">
+            <input readonly class="entry" id="entry">
+
+            <button class="structureSymbol" onclick="addSymbol('(')">(</button>
+            <button class="structureSymbol" onclick="addSymbol(')')">)</button>
+            <button class="structureSymbol" onclick="deleteOne()" id="cancelOne">⌫</button>
+            <button class="structureSymbol" onclick="addSymbol('+')">+</button>
+
+            <button class="numberSymbol" onclick="addSymbol('7')">7</button>
+            <button class="numberSymbol" onclick="addSymbol('8')">8</button>
+            <button class="numberSymbol" onclick="addSymbol('9')">9</button>
+            <button class="structureSymbol" onclick="addSymbol('-')">-</button>
+
+            <button class="numberSymbol" onclick="addSymbol('4')">4</button>
+            <button class="numberSymbol" onclick="addSymbol('5')">5</button>
+            <button class="numberSymbol" onclick="addSymbol('6')">6</button>
+            <button class="structureSymbol" onclick="addSymbol('÷')">÷</button>
+            
+            <button class="numberSymbol" onclick="addSymbol('1')">1</button>
+            <button class="numberSymbol" onclick="addSymbol('2')">2</button>
+            <button class="numberSymbol" onclick="addSymbol('3')">3</button>
+            <button class="structureSymbol" onclick="addSymbol('x')">x</button>
+
+            <button class="structureSymbol" onclick="deleteAll()" id="cancelAll">C</button>
+            <button class="numberSymbol" onclick="addSymbol('0')">0</button>
+            <button class="numberSymbol" onclick="addSymbol('.')">.</button>
+            <button class="structureSymbol" onclick="calculate()" id="equal">=</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+body {
+    background-color: rgb(97, 97, 97);
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    align-items: center;
+}
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 0;
+    font-weight: bold;
+    text-shadow: 3px 3px 3px rgb(70, 70, 70);
+}
+.calculator {
+    display: grid;
+    grid-template-columns: repeat(4);
+    grid-template-rows: repeat(6);
+    gap: 1rem;
+    background-color: gray;
+    padding: 1rem;
+    margin-top: 5rem;
+    border: solid 3px rgb(61, 61, 61);
+    border-radius: 1rem;
+    box-shadow: 3px 3px 3px rgb(70, 70, 70);
+}
+
+.entry {
+    grid-column: 1/5;
+    padding-left: 0.6rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 2.5rem;
+    background-color: rgb(192, 192, 192);
+    font-family: 'Arial', sans-serif;
+    font-weight: none;
+    height: 4.2rem;
+    width: 22.2rem;
+    cursor: default;
+}
+button {
+    height: 5rem;
+    width: 5rem;
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+
+}
+.structureSymbol {
+    background-color: orange;
+}
+#equal {
+    background-color: rgb(1, 129, 1);
+}
+#cancelAll {
+    background-color: rgb(204, 1, 1);
+}
+.entry:focus {
+    outline: none;
+    caret-color: transparent;
+}
+button:hover {
+    transform: scale(1.05);
+}
+.number:hover {
+    background-color: rgb(65, 65, 65);
+}
+.number:active {
+    background-color: rgb(34, 34, 34);
+}
+.structureSymbol:hover {
+    background-color: rgb(223, 145, 0);
+}
+.structureSymbol:active {
+    background-color: rgb(202, 131, 0);
+}
+#cancelAll:hover {
+    background-color: rgb(179, 0, 0);
+}
+#cancelAll:active {
+    background-color: rgb(148, 0, 0);
+}
+#equal:hover {
+    background-color: rgb(0, 104, 0);
+}
+#equal:active {
+    background-color: rgb(0, 82, 0);
+}
