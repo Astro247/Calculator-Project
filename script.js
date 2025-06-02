@@ -47,7 +47,7 @@ function calculate() {
         if(isNaN(result)) {
             throw new Error("UNDEFINED") 
         }
-        else if(result === Infinity) {
+        else if(result === Infinity || result === -Infinity) {
             throw new Error("IMPOSSIBLE")
         }
         display.value = result
