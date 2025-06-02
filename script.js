@@ -2,7 +2,7 @@ const display = document.getElementById("entry")
 let string = "", lastPressedButton = null
 
 function addSymbol(symbol) {
-    if(lastPressedButton === "e") {
+    if(lastPressedButton === "error") {
         deleteAll()
         display.value += symbol
         string = string + symbol
@@ -22,7 +22,7 @@ function addSymbol(symbol) {
 }
 
 function deleteOne() {
-    if(lastPressedButton === "=" || lastPressedButton === "e") {
+    if(lastPressedButton === "=" || lastPressedButton === "error") {
         deleteAll()
     }
     else {
@@ -40,23 +40,25 @@ function deleteAll() {
 
 function calculate() {
     lastPressedButton = "="
-
     string = string.replaceAll("x", "*")
     string = string.replaceAll("÷", "/")
-    string = string.replaceAll("//", "a")
     try {
-        display.value = eval(string)
-        if(display.value === "Infinity") {  
-            display.value = "IMPOSSIBLE"
-            lastPressedButton = "e"
+        result = eval(string)
+        if(isNaN(result)) {
+            throw new Error("UNDEFINED") 
         }
-        else if(isNaN(display.value)) {
-            display.value = "UNDEFINED"
-            lastPressedButton = "e"
+        else if(result === Infinity) {
+            throw new Error("IMPOSSIBLE")
         }
+        display.value = result
     }
     catch(error) {
-        display.value = "INVALID SYNTAX"
-        lastPressedButton = "e"
+        if(error instanceof SyntaxError) {
+            display.value = "SYNTAX ERROR"
+        }
+        else {
+            display.value = error.message
+        }
+        lastPressedButton = "error"
     }
 }
